@@ -14,4 +14,12 @@
  DEBUG=myapp npm start
  ```
  生成的express应用如下目录：
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  ![image](./WechatIMG43.jpeg)
