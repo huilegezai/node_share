@@ -31,6 +31,20 @@
    
 node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"，执行步骤
     ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG46.jpeg)
-
- 
+    
+虽然异步操作性能挺好，但是有时候会出现多嵌套的情况，代码难看，且难于维护。
+ ```
+ fs.readFile('./README.md',function (err,file) {
+        fs.readFile('./README.md',function (err,file) {
+               fs.readFile('./README.md',function (err,file) {
+                      fs.readFile('./README.md',function (err,file) {
+                             console.log("读取文件完成");
+                         });
+                      console.log("读取文件完成");
+                  });
+               console.log("读取文件完成");
+           });
+        console.log("读取文件完成");
+    });
+ ```
 
