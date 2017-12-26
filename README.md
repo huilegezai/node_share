@@ -30,7 +30,7 @@
    ```
    
 node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"，执行步骤
-    ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG46.jpeg)
+![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG46.jpeg)
     
 虽然异步操作性能挺好，但是有时候会出现多嵌套的情况，代码难看，且难于维护。如图，
  ```
@@ -46,12 +46,19 @@ node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"�
            });
         console.log("读取文件完成");
     });
+    
  ```
 [async](https://github.com/caolan/async)模块可以解决多层嵌套的问题  
 **可以参考这个教程**
 [https://github.com/huilegezai/async_demo](https://github.com/huilegezai/async_demo)
 
 目前项目中用到的如：
-       ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG47.jpeg)
+![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG47.jpeg)  
+       
+## nodejs安装
+ - nvm  --Node Version Manager（Node版本管理器）参考博客[https://www.jianshu.com/p/8671e439a811](https://www.jianshu.com/p/8671e439a811)
+ - node
+ - npm  --Node Packaged Modules（Node包管理工具）
+ 用nvm管理nodejs版本，可以轻松切换node版本，优点很多，但是一些nodejs模块需要全局安装时都得每个node版本都要安装。
 
 
