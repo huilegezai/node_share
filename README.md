@@ -15,9 +15,22 @@
  - 单线程
  - 跨平台（libuv）
  1. 异步以及单线程
-  node其实不是一种语言，是javascript语言的运行环境，所以javascript前端浏览器的一些API都会有，不过是把javascript运行在服务器端，  
+  node其实不是一种语言，是javascript语言的运行环境，所以javascript前端浏览器的一些API都会有，不过是把javascript运行在服务器端。  
   nodejs的API是异步的，并且是单线程的，单线程可以避免多线程的开销，以及上下文切换时的开销，不会涉及同步状态的问题。
-  - 前端涉及异步，典型的是Ajax调用。
-  
+  - 前端涉及异步的地方，典型的是Ajax调用。
+  - node异步读取文件
+   ```
+   var fs  = require('fs');
+   
+   fs.readFile('./README.md',function (err,file) {
+       console.log("读取文件完成");
+   });
+   
+   console.log("发起读取文件");
+   ```
+   
+node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"，执行步骤
+    ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG46.jpeg)
+
  
 
