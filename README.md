@@ -51,3 +51,7 @@ node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"�
 **可以参考这个教程**
 [https://github.com/huilegezai/async_demo](https://github.com/huilegezai/async_demo)
 
+目前项目中用到的如：
+       ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG47.jpeg)
+
+
