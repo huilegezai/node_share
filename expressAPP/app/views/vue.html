@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p >
+    <button v-on:click="reverseMessage">反转字符串</button>
+</div>
+<div><%=title%> </div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Runoob!'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.$http.get('http://localhost:3000/users/vue').then(function(response){
+                    // 响应成功回调
+                    this.message = response.body.datavue;
+                }, function(response){
+                    // 响应错误回调
+                });
+            }
+        }
+    })
+</script>
+</body>
+</html>

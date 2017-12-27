@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+</head>
+<body>
+    <div id="example03">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="person in people">
+                <td>{{ person.name }}</td>
+                <td>{{ person.age }}</td>
+                <td>{{ person.sex }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button v-on:click="reverseMessage">从后台取数据</button>
+
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#example03',
+        data: {
+            msg: 'Hello World!',
+            people: [{
+                name: 'Jack',
+                age: 30,
+                sex: 'Male'
+            },
+                {
+                    name: 'Bill',
+                    age: 26,
+                    sex: 'Male'
+                },
+                {
+                    name: 'Tracy',
+                    age: 22,
+                    sex: 'Female'
+                },
+                {
+                    name: 'Chris',
+                    age: 36,
+                    sex: 'Male'
+                }]
+        },
+        methods: {
+            reverseMessage: function () {
+                this.$http.get('http://localhost:3000/users/duyuandata').then(function(response){
+                    // 响应成功回调
+                    this.people = response.body;
+                }, function(response){
+                    // 响应错误回调
+                });
+            }
+        }
+    })
+</script>
+
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        color: red;
+        font-size: 18px;
+    }
+</style>
