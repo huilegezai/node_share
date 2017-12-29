@@ -61,5 +61,21 @@ node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"�
  - npm  --Node Packaged Modules（Node包管理工具）
  用nvm管理nodejs版本，可以轻松切换node版本，优点很多，但是一些nodejs模块需要全局安装时都得每个node版本都要安装。  
  npm是nodejs包的管理工具，我查看官网目前有475000个模块，开发者下载并在项目中使用。[https://www.npmjs.com/](https://www.npmjs.com/)
+ ### 相关命令
+  ```
+  nvm install v4.4.0  //安装node 
+  nvm ls              //查看已经安装的node版本
+  nvm use v4.4.0      //切换node版本
+  node -v             //查看当前node版本
+  npm -v              //查看当前npm版本
+  ```
+  
+  ## express
+  **基于 Node.js 平台，快速、开放、极简的 web 开发框架**
+  其他nodejs开发框架还有：
+  ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG48.jpeg)  
+  可以参考这个路径[https://cnodejs.org/topic/58caaec27dee71e5193a53ce](https://cnodejs.org/topic/58caaec27dee71e5193a53ce)
+
+
 
 
