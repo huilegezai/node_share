@@ -71,10 +71,17 @@ node readFile.js 先打印"发起读取文件"，后打印"读取文件完成"�
   ```
   
   ## express
-  **基于 Node.js 平台，快速、开放、极简的 web 开发框架**
+  **[基于 Node.js 平台，快速、开放、极简的 web 开发框架](http://www.expressjs.com.cn/)**
   其他nodejs开发框架还有：
   ![image](https://github.com/huilegezai/node_share/blob/master/images/WechatIMG48.jpeg)  
-  可以参考这个路径[https://cnodejs.org/topic/58caaec27dee71e5193a53ce](https://cnodejs.org/topic/58caaec27dee71e5193a53ce)
+  可以参考这个路径[https://cnodejs.org/topic/58caaec27dee71e5193a53ce](https://cnodejs.org/topic/58caaec27dee71e5193a53ce)  
+  
+  
+  ### 页面模板 jade ejs dot
+  ### 路由
+  ### 中间件
+  ### mongodb数据库
+  ### 多线程
 
 
 
