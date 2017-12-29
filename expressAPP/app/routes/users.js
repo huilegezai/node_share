@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var User = require("../models/user.js");
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -41,6 +43,70 @@ router.get('/duyuandata', function(req, res, next) {
          }]
     );
 });
+
+
+/**
+ * mongodb操作
+ */
+
+//插入数据
+router.get('/insertData/:name/:age/:sex', function(req, res, next) {
+
+    console.log("插入数据");
+    var user = new User({
+        name : req.params.name,                 //用户名
+        age:   req.params.age,                  //年龄
+        sex:   req.params.sex                   //性别
+    });
+    //插入数据
+    user.save(function (err, res) {
+        if (err) {
+            console.log("插入数据失败:" + err);
+        }
+        else {
+            console.log("插入数据成功:" + res);
+        }
+    });
+
+    res.render('vue', { title: '查询数据成功' });
+});
+
+//查询数据
+router.get('/getData', function(req, res, next) {
+
+    //插入数据
+    User.find({},function (err, user) {
+        if (err) {
+            console.log("查询数据失败:" + err);
+        }
+        else {
+            console.log("查询数据成功:" + user);
+        }
+
+        console.log("huilegezai")
+        res.send(user);
+    });
+
+});
+
+//删除数据
+router.get('/deleteData', function(req, res, next) {
+
+    console.log("删除数据");
+
+    var wherestr = {'name' : 'huizai'};
+
+    User.remove(wherestr, function(err, res){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+            console.log("Res:" + res);
+        }
+    })
+    res.render('vue', { title: '删除数据成功' });
+});
+
 module.exports = router;
 
 

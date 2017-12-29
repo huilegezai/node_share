@@ -7,27 +7,27 @@
     <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
 </head>
 <body>
-    <div id="example03">
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Sex</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="person in people">
-                <td>{{ person.name }}</td>
-                <td>{{ person.age }}</td>
-                <td>{{ person.sex }}</td>
-            </tr>
-            </tbody>
-        </table>
+<div id="example03">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="person in people">
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+            <td>{{ person.sex }}</td>
+        </tr>
+        </tbody>
+    </table>
 
-        <button v-on:click="reverseMessage">从后台取数据</button>
+    <button v-on:click="reverseMessage">从后台取数据</button>
 
-    </div>
+</div>
 </body>
 <script>
     var vm = new Vue({
@@ -57,11 +57,8 @@
         },
         methods: {
             reverseMessage: function () {
-                this.$http.get('http://localhost:3000/users/getData').then(function(response){
-                    // 响应成功回调
-                    this.people = response.body;
+                this.$http.get('http://localhost:3000/users/duyuandata').then(function(response){
                 }, function(response){
-                    // 响应错误回调
                 });
             }
         }
